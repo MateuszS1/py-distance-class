@@ -18,7 +18,7 @@ class Distance:
         if other_km is not None:
             return Distance(self.km + other_km)
 
-        return other_km
+        return NotImplemented
 
     def __iadd__(self, other: Any) -> Any:
         other_km = Distance.return_km_value(other)
@@ -27,19 +27,19 @@ class Distance:
             self.km += other_km
             return self
 
-        return other_km
+        return NotImplemented
 
     def __mul__(self, other: Any) -> Any:
         if isinstance(other, int | float):
             return Distance(self.km * other)
 
-        return None
+        return NotImplemented
 
     def __truediv__(self, other: Any) -> Any:
         if isinstance(other, int | float):
             return Distance(round(self.km / other, 2))
 
-        return None
+        return NotImplemented
 
     def __lt__(self, other: Any) -> Any:
         other_km = Distance.return_km_value(other)
@@ -47,7 +47,7 @@ class Distance:
         if other_km is not None:
             return True if self.km < other_km else False
 
-        return other_km
+        return NotImplemented
 
     def __gt__(self, other: Any) -> Any:
         other_km = Distance.return_km_value(other)
@@ -55,7 +55,7 @@ class Distance:
         if other_km is not None:
             return True if self.km > other_km else False
 
-        return other_km
+        return NotImplemented
 
     def __eq__(self, other: Any) -> Any:
         other_km = Distance.return_km_value(other)
@@ -63,7 +63,7 @@ class Distance:
         if other_km is not None:
             return True if self.km == other_km else False
 
-        return other_km
+        return NotImplemented
 
     def __le__(self, other: Any) -> Any:
         other_km = Distance.return_km_value(other)
@@ -71,7 +71,7 @@ class Distance:
         if other_km is not None:
             return True if self.km <= other_km else False
 
-        return other_km
+        return NotImplemented
 
     def __ge__(self, other: Any) -> Any:
         other_km = Distance.return_km_value(other)
@@ -79,7 +79,7 @@ class Distance:
         if other_km is not None:
             return True if self.km >= other_km else False
 
-        return other_km
+        return NotImplemented
 
     @staticmethod
     def return_km_value(other: Any) -> Any:
