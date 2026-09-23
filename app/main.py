@@ -86,6 +86,7 @@ class Distance:
         if isinstance(other, Distance):
             return other.km
 
-        elif isinstance(other, int) or isinstance(other, float):
+        elif isinstance(other, (int, float)):
             return other
+
         return None
