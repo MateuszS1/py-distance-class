@@ -88,5 +88,4 @@ class Distance:
 
         elif isinstance(other, int) or isinstance(other, float):
             return other
-
         return None
